@@ -125,10 +125,32 @@ def user_stats(df):
     start_time = time.time()
 
     # TO DO: Display counts of user types
-
+    user_types = df['User Type'].value_counts()
+    print('Users:', user_types)
     # TO DO: Display counts of gender
-
+    try:
+        type_of_gender = df['Gender'].value_counts()
+        print('Gender Types:', type_of_gender)
+    except:
+        print('There is no gender data for the month.')
     # TO DO: Display earliest, most recent, and most common year of birth
+    try:
+        earliest_birth = df['Birth Year'].min()
+        print('Earliest Birth:', earliest_birth)
+    except:
+        print('No data found')
+    # Most recent
+    try:
+        most_recent_birth = df['Birth Year'].max()
+        print('Most Recent Birth:', most_recent_birth)
+    except:
+        print('No data found')
+    # Most common
+    try:
+        most_common_birth = df['Birth Year'].value_counts().idxmax()
+        print('Most Common Birth:', most_common_birth)
+    except:
+        print('No data found')
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
