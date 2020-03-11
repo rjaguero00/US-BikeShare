@@ -2,9 +2,9 @@ import time
 import pandas as pd
 import numpy as np
 
-CITY_DATA = {'chicago': 'chicago.csv',
-             'new york city': 'new_york_city.csv',
-             'washington': 'washington.csv'}
+CITY_DATA = {'Chicago': 'chicago.csv',
+             'New York City': 'new_york_city.csv',
+             'Washington': 'washington.csv'}
 
 
 def get_filters():
@@ -94,12 +94,13 @@ def load_data(city, month, day):
 def time_stats(df):
     """Displays statistics on the most frequent times of travel."""
 
-    print('\nCalculating The Most Frequent Times of Travel...\n')
+    print('Calculating The Most Frequent Times of Travel...')
     start_time = time.time()
 
     # TO DO: display the most common month
     popular_month = df['month'].mode()[0]
     print('Most Common Month', popular_month)
+
     # TO DO: display the most common day of week
     popular_day = df['day_of_week'].mode()[0]
     print('Most Common Day:', popular_day)
@@ -109,9 +110,8 @@ def time_stats(df):
     popular_hour = df['hour'].mode()[0]
     print('Most Common Hour:', popular_hour)
 
-
-print("\nThis took %s seconds." % (time.time() - start_time))
-print('-'*40)
+    print("\nThis took %s seconds." % (time.time() - start_time))
+    print('-'*40)
 
 
 def station_stats(df):
@@ -123,9 +123,11 @@ def station_stats(df):
     # TO DO: display most commonly used start station
     start_station = df['Start Station'].value_counts().idxmax()
     print('Commonly Used Start Station:', start_station)
+
     # TO DO: display most commonly used end station
     end_station = df['End Station'].value_counts().idxmax()
     print('Commonly Used End Station:', end_station)
+
     # TO DO: display most frequent combination of start station and end station trip
     end_start_station = df.groupby(['Start Station', 'End Station']).count()
     print('Frequently Taken Start and End Station Trip:',
