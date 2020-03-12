@@ -2,9 +2,9 @@ import time
 import pandas as pd
 import numpy as np
 
-CITY_DATA = {'Chicago': 'chicago.csv',
-             'New York City': 'new_york_city.csv',
-             'Washington': 'washington.csv'}
+CITY_DATA = {'chicago': 'chicago.csv',
+             'new york city': 'new_york_city.csv',
+             'washington': 'washington.csv'}
 
 
 def get_filters():
@@ -21,10 +21,10 @@ def get_filters():
     # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
     while True:
         city = input(
-            'Which city would you like to explore US Bikeshare data?: Chicago, New York City or Washington?')
-        if city not in ('Chicago', 'New York City', 'Washington'):
+            'Which city would you like to explore US Bikeshare data?: Chicago, New York City or Washington? ')
+        if city.lower() not in ('chicago', 'new york city', 'washington'):
             print(
-                'Sorry, please enter the one of the following cities: Chicago, New York City or Washington')
+                'Sorry, please enter the one of the following cities: Chicago, New York City or Washington ')
             continue
         else:
             break
@@ -32,9 +32,9 @@ def get_filters():
     # TO DO: get user input for month (all, january, february, ... , june)
     while True:
         month = input(
-            'Which month would you like to explore data from? January, February, March, April, May, June or all?')
-        if month not in ('January', 'February', 'March', 'April', 'May', 'June', 'all'):
-            print('Sorry, please enter one of the following months: January, February, March, April, May, June or all')
+            'Which month would you like to explore data from? January, February, March, April, May, June or all? ')
+        if month.lower() not in ('january', 'february', 'march', 'april', 'may', 'june', 'all'):
+            print('Sorry, please enter one of the following months: January, February, March, April, May, June or all ')
             continue
         else:
             break
@@ -42,9 +42,9 @@ def get_filters():
     # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
     while True:
         day = input(
-            'Which day would you like to explore data from? Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday or all')
-        if day not in ('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'all'):
-            print('Sorry please enter one of the following days: Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday or all')
+            'Which day would you like to explore data from? Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday or all ')
+        if day.lower() not in ('sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'all'):
+            print('Sorry please enter one of the following days: Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday or all ')
             continue
         else:
             break
