@@ -16,12 +16,12 @@ def get_filters():
         (str) month - name of the month to filter by, or "all" to apply no month filter
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
     """
-    print('Hello! Let\'s explore some US bikeshare data!')
+    print('\nHello! Let\'s explore some US bikeshare data!')
 
     # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
     while True:
         city = str(input(
-            'Which city would you like to explore US Bikeshare data?: Chicago, New York City or Washington? ')).lower()
+            '\nWhich city would you like to explore US Bikeshare data?: Chicago, New York City or Washington?\n ')).lower()
         if city not in ('chicago', 'new york city', 'washington'):
             print(
                 'Sorry, please enter the one of the following cities: Chicago, New York City or Washington ')
@@ -32,7 +32,7 @@ def get_filters():
     # TO DO: get user input for month (all, january, february, ... , june)
     while True:
         month = str(input(
-            'Which month would you like to explore data from? January, February, March, April, May, June or all? ')).lower()
+            '\nWhich month would you like to explore data from? January, February, March, April, May, June or all?\n ')).lower()
         if month not in ('january', 'february', 'march', 'april', 'may', 'june', 'all'):
             print('Sorry, please enter one of the following months: January, February, March, April, May, June or all. ')
             continue
@@ -42,7 +42,7 @@ def get_filters():
     # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
     while True:
         day = str(input(
-            'Which day would you like to explore data from? Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday or all '))
+            '\nWhich day would you like to explore data from? Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday or all\n '))
         if day.lower() not in ('sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'all'):
             print('Sorry please enter one of the following days: Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday or all ')
             continue
