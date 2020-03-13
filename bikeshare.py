@@ -20,9 +20,9 @@ def get_filters():
 
     # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
     while True:
-        city = input(
-            'Which city would you like to explore US Bikeshare data?: Chicago, New York City or Washington? ')
-        if city.lower() not in ('chicago', 'new york city', 'washington'):
+        city = str(input(
+            'Which city would you like to explore US Bikeshare data?: Chicago, New York City or Washington? ')).lower()
+        if city not in ('chicago', 'new york city', 'washington'):
             print(
                 'Sorry, please enter the one of the following cities: Chicago, New York City or Washington ')
             continue
@@ -31,18 +31,18 @@ def get_filters():
 
     # TO DO: get user input for month (all, january, february, ... , june)
     while True:
-        month = input(
-            'Which month would you like to explore data from? January, February, March, April, May, June or all? ')
-        if month.lower() not in ('january', 'february', 'march', 'april', 'may', 'june', 'all'):
-            print('Sorry, please enter one of the following months: January, February, March, April, May, June or all ')
+        month = str(input(
+            'Which month would you like to explore data from? January, February, March, April, May, June or all? ')).lower()
+        if month not in ('january', 'february', 'march', 'april', 'may', 'june', 'all'):
+            print('Sorry, please enter one of the following months: January, February, March, April, May, June or all. ')
             continue
         else:
             break
 
     # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
     while True:
-        day = input(
-            'Which day would you like to explore data from? Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday or all ')
+        day = str(input(
+            'Which day would you like to explore data from? Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday or all '))
         if day.lower() not in ('sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'all'):
             print('Sorry please enter one of the following days: Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday or all ')
             continue
@@ -77,7 +77,7 @@ def load_data(city, month, day):
     # filter by month if applicable
     if month != 'all':
         # use the index of the months list to get the corresponding int
-        months = ['January', 'February', 'March', 'April', 'May', 'June']
+        months = ['january', 'february', 'march', 'april', 'may', 'june']
         month = months.index(month) + 1
 
         # filter by month to create the new dataframe
